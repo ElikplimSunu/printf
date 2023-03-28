@@ -1,5 +1,5 @@
-.\" Manpage for _printf.
-.TH _printf 3 "18 April 2022" "1.0" "Program Manual for _printf"
+./" Manpage for _printf.
+.TH _printf 3 "12 July 2022" "1.0" "Program Manual for _printf"
 .SH NAME
  _printf - formatted output conversion and print data.
 .SH SYNOPSIS
@@ -11,19 +11,19 @@
 .BI "#include <unistd.h>"
 .PP
 .BI "int _printf(const char *format, ...);"
-.BI "int print_prg(va_list __attribute__((unused)), char *, unsigned int);"
-.BI "int print_chr(va_list arguments, char *buf, unsigned int ibuf);"
-.BI "int print_str(va_list arguments, char *buf, unsigned int ibuf);"
-.BI "int print_int(va_list arguments, char *buf, unsigned int ibuf);"
-.BI "int print_bnr(va_list arguments, char *buf, unsigned int ibuf);"
-.BI "int print_unt(va_list arguments, char *buf, unsigned int ibuf);"
-.BI "int print_oct(va_list arguments, char *buf, unsigned int ibuf);"
-.BI "int print_hex(va_list arguments, char *buf, unsigned int ibuf);"
-.BI "int print_upx(va_list arguments, char *buf, unsigned int ibuf);"
-.BI "int print_usr(va_list arguments, char *buf, unsigned int ibuf);"
-.BI "int print_add(va_list arguments, char *buf, unsigned int ibuf);"
-.BI "int print_rev(va_list arguments, char *buf, unsigned int ibuf);"
-.BI "int print_rot(va_list arguments, char *buf, unsigned int ibuf);"
+.BI "int pr_prg(va_list __attribute__((unused)), char *, unsigned int);"
+.BI "int pr_char(va_list arguments, char *buf, unsigned int ibuf);"
+.BI "int pr_str(va_list arguments, char *buf, unsigned int ibuf);"
+.BI "int pr_int(va_list arguments, char *buf, unsigned int ibuf);"
+.BI "int pr_bin(va_list arguments, char *buf, unsigned int ibuf);"
+.BI "int pr_un_int(va_list arguments, char *buf, unsigned int ibuf);"
+.BI "int pr_octa(va_list arguments, char *buf, unsigned int ibuf);"
+.BI "int pr_hex(va_list arguments, char *buf, unsigned int ibuf);"
+.BI "int pr_heX(va_list arguments, char *buf, unsigned int ibuf);"
+.BI "int pr_usr(va_list arguments, char *buf, unsigned int ibuf);"
+.BI "int pr_add(va_list arguments, char *buf, unsigned int ibuf);"
+.BI "int pr_rev(va_list arguments, char *buf, unsigned int ibuf);"
+.BI "int pr_rot(va_list arguments, char *buf, unsigned int ibuf);"
 .BI "int prinlint(va_list arguments, char *buf, unsigned int ibuf);"
 .BI "int prinlunt(va_list arguments, char *buf, unsigned int ibuf);"
 .BI "int prinloct(va_list arguments, char *buf, unsigned int ibuf);"
@@ -40,11 +40,11 @@
 .BI "int prinnupx(va_list arguments, char *buf, unsigned int ibuf);"
 .BI "int prinsint(va_list arguments, char *buf, unsigned int ibuf);"
 .PP
-.BI "int (*get_print_func(const char *s, int index))(va_list, char *, unsigned int);"
+.BI "int (*get_func(const char *s, int index))(va_list, char *, unsigned int);"
 .BI "int ev_print_func(const char *s, int index);"
 .PP
 .BI "unsigned int handl_buf(char *buf, char c, unsigned int ibuf);"
-.BI "int print_buf(char *buf, unsigned int nbuf);"
+.BI "int pr_buf(char *buf, unsigned int nbuf);"
 .PP
 .BI "char *fill_binary_array(char *binary, long int int_in, int isneg, int limit);"
 .BI "char *fill_oct_array(char *bnr, char *oct);"
@@ -98,13 +98,13 @@ The character \fI%\fR is followed by zero the following flags:
 .R A space in blank should be left before a positive number followed by a signed conversion.
 .SH NOTES.R A space in blank should be left before a positive number followed by a signed conversion.
 .SH NOTES
-.R The \fB_printf()\fR is a project collaboration between \fBSuara Ayomide\fR and \fBOni Remi\fR, students of the ALX Software Engineering Programme at \fBHolberton School\fR.
+.R The \fB_printf()\fR is a project collaboration between \Maxwell D. Dorliea\fR and \Ladetunji Osibanjo\fR, actual students of Software Engineering at \fB Alx\fR.
 .SH BUGS
 .R In process
 .SH EXAMPLE
-.R To print the the string \fBHello Holberton!\fR and its length in decimal.
+.R To print the the string \fBHello Alx!\fR and its length in decimal.
 
-#include ''holberton.h''
+#include ''main.h''
 
 int main(void)
 
@@ -112,11 +112,11 @@ int main(void)
 
 	int length;
 
-	_printf(''%s'', ''Hello, Holberton!'')
+	_printf(''%s'', ''Hello, Alx!'')
 
-	_printf(''Hello Holberton! contains %d characters'', length);
+	_printf(''Hello Alx! contains %d characters'', length);
 
-	length = _printf(''Hello Holberton!'');
+	length = _printf(''Hello Alx!'');
 
 	return (0);
 
@@ -124,4 +124,4 @@ int main(void)
 .SH SEE ALSO
 .R printf(3)
 .SH AUTHORS
-Written by \fBSuara Ayomide\fR and \fBOni Remi\fR.
+Written by \Maxwell D. Dorliea\fR and \fB Ladetunji Osibanjo \fR.
